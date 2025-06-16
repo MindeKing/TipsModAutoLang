@@ -75,9 +75,5 @@ verbose_confirm_n (0,1)
 
 force_unset (0,1) Forcibly sets all "var_set" variables to 0 in the ":unset_settings" function.
 
-new_manual_defaults_set (0,1) Defaults whether a new MD file will be created or not, just to bypass the query.
-
-new_manual_defaults
-
 advanced_mode (0,2) Enables setting tips+lang folder names, plus their files' extensions.
 
