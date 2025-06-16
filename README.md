@@ -9,7 +9,7 @@ Highly configurable.
 
 Still under development, but I wanted to get a head-start on the GitHub page.
 # Settings:
-==================== Terms ====================
+## Terms
 
 __tip_folder_name [any valid string]
 
@@ -19,7 +19,7 @@ __tip_file_list [path to existing .txt / blank]
 
 __namespace_overwrite [valid path to potential folder and \ or any valid string]
 
-==================== Entry Files ====================
+## Entry Files
 
 __tip_file_rep_space [any valid string]
 
@@ -35,7 +35,7 @@ __tip_file_template [path to existing .txt / blank]
 
 __tip_file_ext [any valid string]
 
-==================== Output File ====================
+## Output File
 
 __lang_file_name [any valid string]
 
@@ -43,7 +43,7 @@ __lang_file_ext [any valid string]
 
 __lang_file_template [path to existing .txt / blank]
 
-==================== Keys ====================
+## Keys
 
 __tip_key_prefix [any valid string / blank]
 
@@ -51,7 +51,7 @@ __tip_key_suffix [any valid string / blank]
 
 __custom_title_key [any valid string / blank]
 
-==================== General ====================
+## General
 
 __batch_file [path to existing .txt / blank]
 
