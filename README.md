@@ -85,7 +85,7 @@ texst
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
 texst
 
-### Keys:
+### Reference Keys:
 * `__tip_key_prefix` [any valid string / blank]\
 texst
 
@@ -95,7 +95,7 @@ texst
 * `__custom_title_key` [any valid string / blank]\
 texst
 
-### General:
+### General Settings:
 * `__open_output_folder` [true / false]\
 texst
 
