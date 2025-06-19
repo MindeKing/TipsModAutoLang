@@ -1,15 +1,22 @@
 # TipsModAutoLang
-Tipsmod can be found here: [![CurseForge Project](https://img.shields.io/curseforge/dt/306549?logo=curseforge&label=CurseForge&style=flat-square&labelColor=2D2D2D&color=555555)](https://www.curseforge.com/minecraft/mc-mods/tips) [![Modrinth Project](https://img.shields.io/modrinth/dt/AMCbgyVw?logo=modrinth&label=Modrinth&style=flat-square&labelColor=2D2D2D&color=555555)](https://modrinth.com/mod/tips)
+Darkhax-Minecraft's "Tips" mod can be found here:
 
-Batch script designed for Darkhax's "Tips" mod for Minecraft.
+[![CurseForge Downloads](https://img.shields.io/curseforge/dt/306549?style=for-the-badge&logo=curseforge&label=CurseForge&color=%23F16436)](https://www.curseforge.com/minecraft/mc-mods/tips)
+[![Modrinth Downloads](https://img.shields.io/modrinth/dt/AMCbgyVw?style=for-the-badge&logo=modrinth&label=Modrinth&color=%2300AF5C)](https://modrinth.com/mod/tips)
+[![Static Badge](https://img.shields.io/badge/Github-Darkhax--Minecraft%2FTips-white?style=for-the-badge&logo=github&color=%23181717)](https://github.com/Darkhax-Minecraft/Tips)
 
-Made specifically with "Tips-fabric-1.21.1-21.1.2" as a reference, but I have no reason to believe it shouldn't work for other versions of the mod since this script is so simple in its opperation.
 
-Simply provide a list of loading screen tip titles, and the script will create all the files and reference keys you need, all referenced in one easy-to-edit language file.
+This is a batch script designed for Darkhax's "Tips" mod for Minecraft.
+
+It was made specifically with "Tips-fabric-1.21.1-21.1.2" as a reference, but I have no reason to believe it shouldn't work for other versions of the mod since this script is so simple in its opperation.
+
+All you need to do is simply provide a list of loading screen tip titles, and the script will create all the files and reference keys you need, all referenced in one easy-to-edit language file.
 
 Highly configurable.
 
 Still under development, but I wanted to get a head-start on the GitHub page.
+
+Not affiliated with Darkhax-Minecraft in any way.
 ## Settings:
 ### Terms
 
