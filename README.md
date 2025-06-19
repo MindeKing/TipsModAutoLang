@@ -11,7 +11,7 @@
 </div>
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
-This is a batch script designed to simplify and streamline file creating for Darkhax-Minecraft's "Tips" mod for Minecraft.
+This is a batch script designed to simplify and streamline file creation in tip packs for Darkhax-Minecraft's "Tips" mod for Minecraft.
 
 It was made specifically with "Tips-fabric-1.21.1-21.1.2" as a reference, but I have no reason to believe it shouldn't work for other versions of the mod since this script is so simple in its opperation.
 
