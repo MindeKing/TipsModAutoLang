@@ -83,7 +83,8 @@ If this setting is set to `ask`, upon any file conflicts being found, you will b
   * Replace one file
   * Manually rename one file
   * Automatically rename one file
-After which point, you will be asked if you want the script to do the same for all following file conflicts.
+
+  After which point, you will be asked if you want the script to do the same for all following file conflicts.
 
 * `__tip_file_template` [path to existing .txt / blank]\
 The *tip file template* refers to a .txt file containing the basic layout that tip files will be generated with.\
