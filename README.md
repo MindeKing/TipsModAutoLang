@@ -52,30 +52,49 @@ I don't believe the "Tips" mod will not recognize this folder if it is called an
 I do not know why I made this a setting you can change.
 
 * `__tip_file_list` [path to existing .txt / blank]\
-text
+The *tip file list* is a .txt file containing one name per line per loading screen tooltip.\
+By default, the *namespace folder* for your generated files is based on the name of this file.
 
 * `__namespace_overwrite` [valid path to potential folder and \ or any valid string]\
 texst
 
 ### Entry Files:
-* `__tip_file_rep_space` [any valid string]\
-texst
+* `__tip_file_rep_space` [any valid string / blank]\
+Since the "Tips" mod can't read files with spaces in their names,\
+(or capital letters, but that's besides the point,)\
+it's necessary to replace any spaces in the *tip file list*.\
+With this setting, you can provide the character(s) you want to use to replace any spaces that might exist for names provided in the *tip file list*.\
+If left blank, all spaces will just be deleted.
 
 * `__tip_file_prefix` [any valid string / blank]\
-texst
+If you're planning on using the same *namespace folder* for multiple kinds of tips, say, belonging to different mods,\
+it can be helpful to organize these files based on what mod or author they're from.\
+For example, if you wanted to create tips for Vanilla Tweaks "Datapacks" and "Crafting Tweaks",\
+You could set the former's *tip file prefix* be "vt.dp." and the latter's be "vt.ct.".\
+This setting will add that specified string to the start of every file generated from the contents of the *tip file list*.
 
 * `__tip_file_suffix` [any valid string / blank]\
-texst
+Same as *tip file prefix*, but it appends the specified string to the end of each file instead.
 
 * `__tip_file_dupes` [ask / keep / replace]\
-texst
+Select, by default, whether you want the script to automatically keep or replace any file conflicts when generating tip files.\
+If this setting is set to `ask`, upon any file conflicts being found, you will be given the option to:
+  * Keep one file
+  * Replace one file
+  * Manually rename one file
+  * Automatically rename one file
+After which point, you will be asked if you want the script to do the same for all following file conflicts.
 
 * `__tip_file_template` [path to existing .txt / blank]\
-texst
+The *tip file template* refers to a .txt file containing the basic layout that tip files will be generated with.\
+Most importantly here are the variables `CTKey` and `TipKey`, which will be used to automatically fill every\
+tip file with the *custom title reference key* (if provided) and that tip's unique *tip reference key*.
 
 * `__tip_file_ext` [any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
-texst
+Whether you want the tip / entry files to be output as anything other than .json.\
+Again, this setting doesn't make sense if you're trying to use this script solely for the "Tips" mod,\
+but my delusions of grandeur know no bounds.
 
 ### Output File:
 * `__lang_file_name` [any valid string]\
@@ -83,53 +102,67 @@ texst
 
 * `__lang_file_ext` [any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
-texst
+Whether you want the tip / entry files to be output as anything other than .json.\
+Again, this setting doesn't make sense if you're trying to use this script solely for the "Tips" mod,\
+but my delusions of grandeur know no bounds.
 
 ### Reference Keys:
 * `__tip_key_prefix` [any valid string / blank]\
 texst
 
 * `__tip_key_suffix` [any valid string / blank]\
-texst
+Same as *tip key prefix*, but it appends the specified string to the end of each tip's reference key instead.
 
 * `__custom_title_key` [any valid string / blank]\
 texst
 
 ### General Settings:
 * `__open_output_folder` [true / false]\
-texst
+Whether the script should or shouldn't open the folder in a new File Explorer window which the lang / output file is generated.\
+Helpful if the output folder and batch script aren't in the same location.
+#
+#
+### Optional Settings:
+* `new_manual_defaults` (0,1)\
+Exports all entered settings into a New Defaults file. Automatically renames itself if conflicts are detected.\
+Useful if you want to create multiple presets via the script, to ensure all provided settings are valid.
 
 ### Not-yet-implemented Settings:
 * `__batch_file` [path to existing .txt / blank]\
-texst
+If you have multiple *tip file list*s that you want to turn into namespaces all with just one opperation of the script,\
+this might become the way to do that.\
+But it's also a very niche use-case that'd probably be very difficult to account for, so don't expect this to come anytime soon.
 
 * `__tip_file_reformat` [true / false]\
-texst
+Enable this setting if you're generating new files based on a *tip file list*, but\
+you also want the contents of every file in the tips / entry folder to be updated:\
+  * To the contents of the *tip file template* file
+  * With new *tip key pre/suffix*s
 
 * `__lang_file_template` [path to existing .txt / blank]\
-texst
-
-### Optional Settings:
-* `new_manual_defaults` (0,1)\
-Exports all entered settings into a New Defaults file. Automatically renames itself if conflicts are detected.
+Will opperate in a similar way to *tip file template*, only for the lang / output file instead.\
+Currently, the format of the lang / output folder is hard-coded in the script itself, which isn't\
+ideal if I want to provide the ability to change the extension of it in the future.
 
 ### Verbosity:
 * `verbose_func` (0-2)\
 Provides more information about every other function that doesn't have its own verbosity setting.
 
 * `verbose_processing_md` (0-2)\
-text
+Provides more information about the function that verifies whether the provided settings are valid or not.
 
 * `verbose_confirm_n` (0,1)\
-texst
+Provides more information about the "confirm_n" function.
 
 ### Other Debug Settings:
 * `force_unset` (0,1)\
-Forcibly sets all "var_set" variables to 0 in the ":unset_settings" function.
+Forcibly sets all "var_set" variables to 0 in the ":unset_settings" function.\
+This makes it such that, even if settings are provided by the defaults or config files,\
+the script will think that they aren't.
 
 * `advanced_mode` (0,2)\
 Enables changing the "tips" and "lang" folder names via the defaults / config files.\
-Enables changing the file extensions of the entry and output files.
+Enables changing the file extensions of the tip / entry and lang / output files.
 
 ## Credits:
 [MindeKing](https://github.com/MindeKing) - for writing most of the script.
