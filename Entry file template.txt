@@ -1,0 +1,9 @@
+{
+	"type": "tipsmod:simple",
+	"title": {
+		"translate": "%CTKey%"
+	},
+	"text": {
+		"translate": "%TipKey%"
+	}
+}
