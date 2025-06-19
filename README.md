@@ -25,76 +25,80 @@ Not affiliated with Darkhax-Minecraft in any way.
 #### __tip_folder_name [any valid string] (doesn't change anything unless advanced_mode is 2)
 
 This is the name of the folder in which the entry file(s) will go.
+
 The Tips mod will not recognize this folder if it is called anything other than "tips".
+
 I do not know why I made this a setting you can change.
 
 #### __lang_folder_name [any valid string] (doesn't change anything unless advanced_mode is 2)
 
 This is the name of the folder in which the output file will go.
+
 The Tips mod will not recognize this folder if it is called anything other than "lang".
+
 I do not know why I made this a setting you can change.
 
-__tip_file_list [path to existing .txt / blank]
+#### __tip_file_list [path to existing .txt / blank]
 
-__namespace_overwrite [valid path to potential folder and \ or any valid string]
+#### __namespace_overwrite [valid path to potential folder and \ or any valid string]
 
 ### Entry Files
 
-__tip_file_rep_space [any valid string]
+#### __tip_file_rep_space [any valid string]
 
-__tip_file_prefix [any valid string / blank]
+#### __tip_file_prefix [any valid string / blank]
 
-__tip_file_suffix [any valid string / blank]
+#### __tip_file_suffix [any valid string / blank]
 
-__tip_file_dupes [ask / keep / replace]
+#### __tip_file_dupes [ask / keep / replace]
 
-__tip_file_template [path to existing .txt / blank]
+#### __tip_file_template [path to existing .txt / blank]
 
-__tip_file_ext [any valid string] (doesn't change anything unless advanced_mode is 2)
+#### __tip_file_ext [any valid string] (doesn't change anything unless advanced_mode is 2)
 
 ### Output File
 
-__lang_file_name [any valid string]
+#### __lang_file_name [any valid string]
 
-__lang_file_ext [any valid string] (doesn't change anything unless advanced_mode is 2)
+#### __lang_file_ext [any valid string] (doesn't change anything unless advanced_mode is 2)
 
 ### Keys
 
-__tip_key_prefix [any valid string / blank]
+#### __tip_key_prefix [any valid string / blank]
 
-__tip_key_suffix [any valid string / blank]
+#### __tip_key_suffix [any valid string / blank]
 
-__custom_title_key [any valid string / blank]
+#### __custom_title_key [any valid string / blank]
 
 ### General
 
-__open_output_folder [true / false]
+#### __open_output_folder [true / false]
 
 ### Not-yet-implemented Settings
 
-__batch_file [path to existing .txt / blank]
+#### __batch_file [path to existing .txt / blank]
 
-__tip_file_reformat [true / false]
+#### __tip_file_reformat [true / false]
 
-__lang_file_template [path to existing .txt / blank]
+#### __lang_file_template [path to existing .txt / blank]
 
 ### Optional Settings
 
-new_manual_defaults (0/1) -- Exports all entered settings into a New Defaults file. Automatically renames itself if conflicts are detected.
+#### new_manual_defaults (0/1) -- Exports all entered settings into a New Defaults file. Automatically renames itself if conflicts are detected.
 
 ### Debug Settings
 
 #### Function verbosity
 
-verbose_func (0-2) Sets the minimum for all "verbose_func" variables to itself. (not yet implemented 20250613)
+##### verbose_func (0-2) Sets the minimum for all "verbose_func" variables to itself. (not yet implemented 20250613)
 
-verbose_processing_md (0-2)
+##### verbose_processing_md (0-2)
 
-verbose_confirm_n (0,1)
+##### verbose_confirm_n (0,1)
 
 #### Other Debug settings
 
-force_unset (0,1) Forcibly sets all "var_set" variables to 0 in the ":unset_settings" function.
+##### force_unset (0,1) Forcibly sets all "var_set" variables to 0 in the ":unset_settings" function.
 
-advanced_mode (0,2) Enables setting tips+lang folder names, plus their files' extensions.
+##### advanced_mode (0,2) Enables setting tips+lang folder names, plus their files' extensions.
 
