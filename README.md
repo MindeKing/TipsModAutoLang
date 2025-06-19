@@ -22,9 +22,17 @@ Not affiliated with Darkhax-Minecraft in any way.
 ## Settings:
 ### Terms
 
-__tip_folder_name [any valid string]
+__tip_folder_name [any valid string] (doesn't change anything unless advanced_mode is 2)
 
-__lang_folder_name [any valid string]
+This is the name of the folder in which the entry file(s) will go.
+The Tips mod will not recognize this folder if it is called anything other than "tips".
+I do not know why I made this a setting you can change.
+
+__lang_folder_name [any valid string] (doesn't change anything unless advanced_mode is 2)
+
+This is the name of the folder in which the output file will go.
+The Tips mod will not recognize this folder if it is called anything other than "lang".
+I do not know why I made this a setting you can change.
 
 __tip_file_list [path to existing .txt / blank]
 
@@ -40,19 +48,15 @@ __tip_file_suffix [any valid string / blank]
 
 __tip_file_dupes [ask / keep / replace]
 
-__tip_file_reformat [true / false]
-
 __tip_file_template [path to existing .txt / blank]
 
-__tip_file_ext [any valid string]
+__tip_file_ext [any valid string] (doesn't change anything unless advanced_mode is 2)
 
 ### Output File
 
 __lang_file_name [any valid string]
 
-__lang_file_ext [any valid string]
-
-__lang_file_template [path to existing .txt / blank]
+__lang_file_ext [any valid string] (doesn't change anything unless advanced_mode is 2)
 
 ### Keys
 
@@ -64,9 +68,15 @@ __custom_title_key [any valid string / blank]
 
 ### General
 
+__open_output_folder [true / false]
+
+### Not-yet-implemented Settings
+
 __batch_file [path to existing .txt / blank]
 
-__open_output_folder [true / false]
+__tip_file_reformat [true / false]
+
+__lang_file_template [path to existing .txt / blank]
 
 ### Optional Settings
 
