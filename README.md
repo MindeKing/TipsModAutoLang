@@ -1,10 +1,15 @@
 # Minecraft "Tips" Mod Auto-Lang Tool
+<!-- MANPAGE: BEGIN EXCLUDED SECTION -->
+<div align="center">
+  
 Darkhax-Minecraft's "Tips" mod can be found here:
 
 [![CurseForge Downloads](https://img.shields.io/curseforge/dt/306549?style=for-the-badge&logo=curseforge&label=CurseForge&color=%23F16436)](https://www.curseforge.com/minecraft/mc-mods/tips)
 [![Modrinth Downloads](https://img.shields.io/modrinth/dt/AMCbgyVw?style=for-the-badge&logo=modrinth&label=Modrinth&color=%2300AF5C)](https://modrinth.com/mod/tips)
 [![Static Badge](https://img.shields.io/badge/Github-Darkhax--Minecraft%2FTips-white?style=for-the-badge&logo=github&color=%23181717)](https://github.com/Darkhax-Minecraft/Tips)
 
+</div>
+<!-- MANPAGE: END EXCLUDED SECTION -->
 
 This is a batch script designed for Darkhax's "Tips" mod for Minecraft.
 
