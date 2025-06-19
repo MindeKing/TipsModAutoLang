@@ -22,13 +22,13 @@ Not affiliated with Darkhax-Minecraft in any way.
 ## Settings:
 ### Terms
 
-__tip_folder_name [any valid string] (doesn't change anything unless advanced_mode is 2)
+#### __tip_folder_name [any valid string] (doesn't change anything unless advanced_mode is 2)
 
 This is the name of the folder in which the entry file(s) will go.
 The Tips mod will not recognize this folder if it is called anything other than "tips".
 I do not know why I made this a setting you can change.
 
-__lang_folder_name [any valid string] (doesn't change anything unless advanced_mode is 2)
+#### __lang_folder_name [any valid string] (doesn't change anything unless advanced_mode is 2)
 
 This is the name of the folder in which the output file will go.
 The Tips mod will not recognize this folder if it is called anything other than "lang".
