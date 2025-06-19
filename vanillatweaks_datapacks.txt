@@ -1,0 +1,54 @@
+anti creeper grief
+anti enderman grief
+anti ghast grief
+armor statues
+armored elytra
+back
+bat membranes
+cauldron concrete
+cauldron mud
+chunk loaders
+classic fishing loot
+confetti creepers
+coordinates hud
+custom nether portals
+custom
+double shulker shells
+dragon drops
+durability ping
+elevators
+ender chest always drops
+fast leaf decay
+glass always drops
+graves
+homes
+husks drop sand
+kill empty boats
+mini blocks
+more effective tools
+more mob heads
+multiplayer sleep
+name colors
+nether portal coords
+painting picker
+player head drops
+real time clock
+redstone rotation wrench
+silence mobs
+silk touch budding amethyst
+spawn
+spawning spheres
+spectator conduit power
+spectator night
+storm channeling
+terracotta rotation wrench
+timber
+tpa
+track raw statistics
+track statistics
+unlock all recipes
+villager death messages
+villager workstation highlights
+wandering trader announcements
+wandering trades
+xp bottling
