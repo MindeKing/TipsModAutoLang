@@ -1,4 +1,4 @@
-# TipsModAutoLang
+# "Tips" Mod Auto-Lang Tool
 Darkhax-Minecraft's "Tips" mod can be found here:
 
 [![CurseForge Downloads](https://img.shields.io/curseforge/dt/306549?style=for-the-badge&logo=curseforge&label=CurseForge&color=%23F16436)](https://www.curseforge.com/minecraft/mc-mods/tips)
