@@ -1,4 +1,5 @@
 # TipsModAutoLang
+Tipsmod can be found here: [![CurseForge Project](https://img.shields.io/curseforge/dt/306549?logo=curseforge&label=CurseForge&style=flat-square&labelColor=2D2D2D&color=555555)](https://www.curseforge.com/minecraft/mc-mods/tips) [![Modrinth Project](https://img.shields.io/modrinth/dt/AMCbgyVw?logo=modrinth&label=Modrinth&style=flat-square&labelColor=2D2D2D&color=555555)](https://modrinth.com/mod/tips)
 Batch script designed for Darkhax's "Tips" mod for Minecraft.
 
 Made specifically with "Tips-fabric-1.21.1-21.1.2" as a reference, but I have no reason to believe it shouldn't work for other versions of the mod since this script is so simple in its opperation.
