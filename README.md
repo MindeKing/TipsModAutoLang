@@ -26,7 +26,7 @@ Still under development, but I wanted to get a head-start on the GitHub page.
 Not affiliated with Darkhax-Minecraft in any way.
 
 ## Problem(s): 
-* In order to make a tip resource pack, you have to:
+* Normally, in order to make a tip resource pack, you have to:
   * Create an individual .json file for every loading screen tip you want to add,
   * and write down each tip's text in in each file,
   * or write a unique reference key in each tip file, then copy that reference key to a localle code .json in a separate "lang" folder.
