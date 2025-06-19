@@ -12,6 +12,8 @@ It was made specifically with "Tips-fabric-1.21.1-21.1.2" as a reference, but I 
 
 All you need to do is simply provide a list of loading screen tip titles, and the script will create all the files and reference keys you need, all referenced in one easy-to-edit language file.
 
+An example tip file list in the form of "vanillatweaks_datapacks.txt" is included so that users can instantly get a sense of what it's like to run the script and what it does.
+
 Highly configurable.
 
 Still under development, but I wanted to get a head-start on the GitHub page.
