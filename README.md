@@ -38,124 +38,124 @@ Not affiliated with Darkhax-Minecraft in any way.
 ## What This Script Does:
 * Bullet
 ## Settings:
-### Terms
+### Terms:
 * `__tip_folder_name` [any valid string]
   * (doesn't change anything unless `advanced_mode` is `2`)
-```
-This is the name of the folder in which the entry file(s) will go.
-I don't believe the "Tips" mod will not recognize this folder if it is called anything other than "tips".
+
+This is the name of the folder in which the entry file(s) will go.\
+I don't believe the "Tips" mod will not recognize this folder if it is called anything other than "tips".\
 I do not know why I made this a setting you can change.
-```
+
 * `__lang_folder_name` [any valid string]
   * (doesn't change anything unless `advanced_mode` is `2`)
-```
-This is the name of the folder in which the output file will go.
-The Tips mod will not recognize this folder if it is called anything other than "lang".
+
+This is the name of the folder in which the output file will go.\
+I don't believe the "Tips" mod will not recognize this folder if it is called anything other than "lang".\
 I do not know why I made this a setting you can change.
-```
+
 * `__tip_file_list` [path to existing .txt / blank]
-```
+
 texst
-```
+
 * `__namespace_overwrite` [valid path to potential folder and \ or any valid string]
-```
+
 texst
-```
-### Entry Files
+
+### Entry Files:
 * `__tip_file_rep_space` [any valid string]
-```
+
 texst
-```
+
 * `__tip_file_prefix` [any valid string / blank]
-```
+
 texst
-```
+
 * `__tip_file_suffix` [any valid string / blank]
-```
+
 texst
-```
+
 * `__tip_file_dupes` [ask / keep / replace]
-```
+
 texst
-```
+
 * `__tip_file_template` [path to existing .txt / blank]
-```
+
 texst
-```
+
 * `__tip_file_ext` [any valid string]
   * (doesn't change anything unless `advanced_mode` is `2`)
-```
+
 texst
-```
-### Output File
+
+### Output File:
 * `__lang_file_name` [any valid string]
-```
+
 texst
-```
+
 * `__lang_file_ext` [any valid string]
   * (doesn't change anything unless `advanced_mode` is `2`)
-```
+
 texst
-```
-### Keys
+
+### Keys:
 * `__tip_key_prefix` [any valid string / blank]
-```
+
 texst
-```
+
 * `__tip_key_suffix` [any valid string / blank]
-```
+
 texst
-```
+
 * `__custom_title_key` [any valid string / blank]
-```
+
 texst
-```
-### General
+
+### General:
 * `__open_output_folder` [true / false]
-```
+
 texst
-```
-### Not-yet-implemented Settings
+
+### Not-yet-implemented Settings:
 * `__batch_file` [path to existing .txt / blank]
-```
+
 texst
-```
+
 * `__tip_file_reformat` [true / false]
-```
+
 texst
-```
+
 * `__lang_file_template` [path to existing .txt / blank]
-```
+
 texst
-```
-### Optional Settings
+
+### Optional Settings:
 * `new_manual_defaults` (0/1) -- Exports all entered settings into a New Defaults file. Automatically renames itself if conflicts are detected.
-```
+
 texst
-```
-### Verbosity
+
+### Verbosity:
 * `verbose_func` (0-2) Sets the minimum for all "verbose_func" variables to itself. (not yet implemented 20250613)
-```
+
 texst
-```
+
 * `verbose_processing_md` (0-2)
-```
+
 texst
-```
+
 * `verbose_confirm_n` (0,1)
-```
+
 texst
-```
-### Other Debug Settings
+
+### Other Debug Settings:
 * `force_unset` (0,1) Forcibly sets all "var_set" variables to 0 in the ":unset_settings" function.
-```
+
 texst
-```
+
 * `advanced_mode` (0,2) Enables setting tips+lang folder names, plus their files' extensions.
-```
+
 texst
-```
-## Credits
+
+## Credits:
 [MindeKing](https://github.com/MindeKing) - for writing most of the script.
 
 https://www.dostips.com - for some functions used in the script.
