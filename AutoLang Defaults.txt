@@ -1,0 +1,20 @@
+__tip_file_list 
+__namespace_overwrite 
+__tip_file_rep_space "_"
+__tip_file_prefix 
+__tip_file_suffix 
+__tip_file_dupes "ask"
+__tip_file_template "Entry_file_template.txt"
+__lang_file_name "en_us"
+__tip_key_prefix 
+__tip_key_suffix 
+__custom_title_key "tipsmod.title.default"
+__open_output_folder 
+
+; Not-yet-implemented settings (they don't do anything, but the script will have a fit if it can't find them, so just leave them as they are):
+__batch_file 
+__tip_file_reformat false
+__lang_file_template 
+
+; Optional settings:
+; new_manual_defaults (0/1) -- Exports all entered settings into a New Defaults file. Automatically renames itself if conflicts are detected.
