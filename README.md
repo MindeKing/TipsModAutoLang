@@ -162,7 +162,7 @@ But it's also a very niche use-case that'd probably be very difficult to account
 
 * `__tip_file_reformat` [true / false]\
 Enable this setting if you're generating new files based on a *tip file list*, but\
-you also want the contents of every file in the tips / entry folder to be updated:\
+you also want the contents of every file in the tips / entry folder to be updated:
   * To the contents of the *tip file template* file
   * With new *tip key pre/suffix*s
 
