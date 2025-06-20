@@ -45,13 +45,13 @@ Not affiliated with Darkhax-Minecraft in any way.
 * Bullet
 ## Settings:
 ### Terms:
-* `__tip_folder_name` [any valid string]\
+* `__tip_folder_name` [valid path to potential folder and \ or any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
 This is the name of the folder in which the entry file(s) will go.\
 I don't believe the "Tips" mod will recognize this folder if it is called anything other than "tips".\
 I do not know why I made this a setting you can change.
 
-* `__lang_folder_name` [any valid string]\
+* `__lang_folder_name` [valid path to potential folder and \ or any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
 This is the name of the folder in which the output file will go.\
 I don't believe the "Tips" mod will recognize this folder if it is called anything other than "lang".\
@@ -59,7 +59,8 @@ I do not know why I made this a setting you can change.
 
 * `__tip_file_list` [path to existing .txt / blank]\
 The *tip file list* is a .txt file containing one name per line per loading screen tooltip.\
-By default, the *namespace folder* for your generated files is based on the name of this file.
+By default, the *namespace folder* for your generated files is based on the name of this file.\
+It's also a mask.
 
 * `__namespace_overwrite` [valid path to potential folder and \ or any valid string]\
 texst
@@ -93,7 +94,8 @@ If this setting is set to `ask`, upon any file conflicts being found, you will b
   * Manually rename one file
   * Automatically rename one file
 
-  After which point, you will be asked if you want the script to do the same for all following file conflicts.
+  After which point, you will be asked if you want the script to do the same for all following file conflicts.\
+  Additionally, if set to "replace", the lang / output file will automatically be replaced too.
 
 * `__tip_file_template` [path to existing .txt / blank]\
 The *tip file template* refers to a .txt file containing the basic layout that tip files will be generated with.\
