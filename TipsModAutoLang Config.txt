@@ -5,4 +5,4 @@ __tip_file_dupes "ask"
 ;__lang_file_name "en_uk"
 __tip_key_prefix "vt.dp.tip."
 __custom_title_key "vt.dp.title"
-__open_output_folder 
+__open_output_folder
