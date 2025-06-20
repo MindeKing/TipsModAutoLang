@@ -30,7 +30,9 @@ Highly configurable.
 
 Still under development, but I wanted to get a head-start on the GitHub page.
 
-Not affiliated with Darkhax-Minecraft in any way.
+<ins>Not affiliated with Darkhax-Minecraft in any way.</ins>
+
+Although the "Tips" mod has built-in support for text formatting (via adding additional lines after each tip or title in the lang .json file), if you want more granular control in your tips or titles, visit [the Minecraft Wiki's formatting code editor](https://minecraft.wiki/w/Formatting_codes#Formatting_code_editor), and copy the "output" text into your lang .json file for the tip / title you want to format.
 
 ## Problem(s): 
 * Normally, in order to make a tip resource pack, you have to:
