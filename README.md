@@ -24,7 +24,7 @@ It was made specifically with "Tips-fabric-1.21.1-21.1.2" as a reference, but I 
 
 All you need to do is simply provide a .txt list of potential loading screen tip names, and the script will create all the files and reference keys you need, all referenced in one easy-to-edit language / output file.
 
-An example tip file list, in the form of "vanillatweaks_datapacks.txt", is included so that users can instantly get a sense of what it's like to run the script and what it does.
+An example *tip file list*, in the form of "vanillatweaks_datapacks.txt", is included so that users can instantly get a sense of what it's like to run the script and what it does.
 
 Highly configurable.
 
@@ -69,7 +69,7 @@ For example, if you wanted to create tips for Vanilla Tweaks "Datapacks" and "Cr
 You could set the former's *tip file prefix* be "vt.dp." and the latter's be "vt.ct.".\
 This setting will add that specified string to the start of every file generated from the contents of the *tip file list*.
 
-  If the names in your *tip file list* are identical to the names of the files in the *tips* / entries folder, ***BUT***\
+  If the names in your *tip file list* are identical to the names of the files in the tips / entries folder, ***BUT***\
 they have different file prefixes or suffixes, those pre-existing files will NOT be replaced when running the script.
 
 * `__tip_file_suffix` [any valid string / blank]\
@@ -162,7 +162,7 @@ But it's also a very niche use-case that'd probably be very difficult to account
 
 * `__tip_file_reformat` [true / false]\
 Enable this setting if you're generating new files based on a *tip file list*, but\
-you also want the contents of every file in the tips / entry folder to be updated:
+you also want the contents of every file in the tips / entries folder to be updated:
   * To the contents of the *tip file template* file
   * With new *tip key pre/suffix*s
 
