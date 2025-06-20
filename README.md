@@ -103,7 +103,7 @@ The *lang file name* is the resulting name of the lang / output file, and\
 it depends on what language you will be using.\
 For example: "en_us" for US English, "en_uk" for British English.\
 Visit https://minecraft.wiki/w/Language for a list of all the\
-locale codes that Minecraft (and, by extension, the "Tips" mod) uses.\
+locale codes that Minecraft (and, by extension, the "Tips" mod) uses.
 
 * `__lang_file_ext` [any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
