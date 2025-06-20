@@ -115,7 +115,7 @@ Again, this setting doesn't make sense if you're trying to use this script solel
 but my delusions of grandeur know no bounds.
 
 * `__lang_file_template` [path to existing .txt / blank]\
-Opperates in a similar way to the *tip file template*, only for the lang / output file instead.\
+Opperates in a similar way to the *tip file template*, only for the lang / output file instead.
 
 ### Reference Keys:
 * `__tip_key_prefix` [any valid string / blank]\
