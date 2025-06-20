@@ -1,0 +1,13 @@
+{
+	"%CTKey%": {"translate": "Vanilla Tweaks Datapacks",
+		"underlined": true,
+		"bold": true,
+		"color": "yellow"
+	},
+<Tips>
+	"%TipKey%": "Placeholder.",
+</Tips>
+<Final_Tip>
+	"%TipKey%": "Placeholder."
+</Final_Tip>
+}
