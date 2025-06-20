@@ -88,7 +88,7 @@ If this setting is set to `ask`, upon any file conflicts being found, you will b
   After which point, you will be asked if you want the script to do the same for all following file conflicts.\
   Additionally, if set to "replace", the lang / output file will automatically be replaced too.
 
-* `__tip_file_template` [path to existing .txt / blank]\
+* `__tip_file_template` [path to existing .txt]\
 The *tip file template* refers to a .txt file containing the basic layout that tip files will be generated with.\
 Most importantly here are the variables `CTKey` and `TipKey`, which will be used to automatically fill every\
 tip file with the *custom title reference key* (if provided) and that tip's unique *tip reference key*.\
@@ -114,7 +114,7 @@ Whether you want the tip / entry files to be output as anything other than .json
 Again, this setting doesn't make sense if you're trying to use this script solely for the "Tips" mod,\
 but my delusions of grandeur know no bounds.
 
-* `__lang_file_template` [path to existing .txt / blank]\
+* `__lang_file_template` [path to existing .txt]\
 Opperates in a similar way to the *tip file template*, only for the lang / output file instead.
 
 ### Reference Keys:
