@@ -46,18 +46,6 @@ Not affiliated with Darkhax-Minecraft in any way.
 * Bullet
 ## Settings:
 ### Terms:
-* `__tip_folder_name` [valid path to potential folder and \ or any valid string]\
-<sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
-This is the name of the folder in which the entry file(s) will go.\
-I don't believe the "Tips" mod will recognize this folder if it is called anything other than "tips".\
-I do not know why I made this a setting you can change.
-
-* `__lang_folder_name` [valid path to potential folder and \ or any valid string]\
-<sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
-This is the name of the folder in which the output file will go.\
-I don't believe the "Tips" mod will recognize this folder if it is called anything other than "lang".\
-I do not know why I made this a setting you can change.
-
 * `__tip_file_list` [path to existing .txt / blank]\
 The *tip file list* is a .txt file containing one name per line per loading screen tooltip.\
 By default, the *namespace folder* for your generated files is based on the name of this file.\
@@ -155,6 +143,18 @@ Exports all entered settings into a New Defaults file. Automatically renames its
 Useful if you want to create multiple presets via the script, to ensure all provided settings are valid.
 
 ### Not-yet-implemented Settings:
+* `__tip_folder_name` [valid path to potential folder and \ or any valid string]\
+<sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
+This is the name of the folder in which the entry file(s) will go.\
+I don't believe the "Tips" mod will recognize this folder if it is called anything other than "tips".\
+I do not know why I made this a setting you can change.
+
+* `__lang_folder_name` [valid path to potential folder and \ or any valid string]\
+<sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
+This is the name of the folder in which the output file will go.\
+I don't believe the "Tips" mod will recognize this folder if it is called anything other than "lang".\
+I do not know why I made this a setting you can change.
+
 * `__batch_file` [path to existing .txt / blank]\
 If you have multiple *tip file list*s that you want to turn into namespaces all with just one opperation of the script,\
 this might become the way to do that.\
