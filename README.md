@@ -48,13 +48,13 @@ Not affiliated with Darkhax-Minecraft in any way.
 * `__tip_folder_name` [any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
 This is the name of the folder in which the entry file(s) will go.\
-I don't believe the "Tips" mod will not recognize this folder if it is called anything other than "tips".\
+I don't believe the "Tips" mod will recognize this folder if it is called anything other than "tips".\
 I do not know why I made this a setting you can change.
 
 * `__lang_folder_name` [any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
 This is the name of the folder in which the output file will go.\
-I don't believe the "Tips" mod will not recognize this folder if it is called anything other than "lang".\
+I don't believe the "Tips" mod will recognize this folder if it is called anything other than "lang".\
 I do not know why I made this a setting you can change.
 
 * `__tip_file_list` [path to existing .txt / blank]\
@@ -78,6 +78,9 @@ it can be helpful to organize these files based on what mod or author they're fr
 For example, if you wanted to create tips for Vanilla Tweaks "Datapacks" and "Crafting Tweaks",\
 You could set the former's *tip file prefix* be "vt.dp." and the latter's be "vt.ct.".\
 This setting will add that specified string to the start of every file generated from the contents of the *tip file list*.
+
+  If the names in your *tip file list* are identical to the names of the files in the *tips* / entries folder, ***BUT***\
+they have different file prefixes or suffixes, those pre-existing files will NOT be replaced when running the script.
 
 * `__tip_file_suffix` [any valid string / blank]\
 Same as *tip file prefix*, but it appends the specified string to the end of each file instead.
@@ -138,7 +141,8 @@ title of, "tipsmod.title.default".
 
 ### General Settings:
 * `__open_output_folder` [true / false]\
-Whether the script should or shouldn't open the folder in a new File Explorer window which the lang / output file is generated.\
+Whether the script should or shouldn't open the lang / output folder in a new File\
+Explorer window which the lang / output file is generated.\
 Helpful if the output folder and batch script aren't in the same location.
 #
 #
