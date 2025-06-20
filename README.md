@@ -91,7 +91,8 @@ If this setting is set to `ask`, upon any file conflicts being found, you will b
 * `__tip_file_template` [path to existing .txt / blank]\
 The *tip file template* refers to a .txt file containing the basic layout that tip files will be generated with.\
 Most importantly here are the variables `CTKey` and `TipKey`, which will be used to automatically fill every\
-tip file with the *custom title reference key* (if provided) and that tip's unique *tip reference key*.
+tip file with the *custom title reference key* (if provided) and that tip's unique *tip reference key*.\
+I'd highly recommend not editing this file.
 
 * `__tip_file_ext` [any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
@@ -112,6 +113,9 @@ locale codes that Minecraft (and, by extension, the "Tips" mod) uses.
 Whether you want the tip / entry files to be output as anything other than .json.\
 Again, this setting doesn't make sense if you're trying to use this script solely for the "Tips" mod,\
 but my delusions of grandeur know no bounds.
+
+* `__lang_file_template` [path to existing .txt / blank]\
+Opperates in a similar way to the *tip file template*, only for the lang / output file instead.\
 
 ### Reference Keys:
 * `__tip_key_prefix` [any valid string / blank]\
@@ -167,11 +171,6 @@ Enable this setting if you're generating new files based on a *tip file list*, b
 you also want the contents of every file in the tips / entries folder to be updated:
   * To the contents of the *tip file template* file
   * With new *tip key pre/suffix*s
-
-* `__lang_file_template` [path to existing .txt / blank]\
-Will opperate in a similar way to *tip file template*, only for the lang / output file instead.\
-Currently, the format of the lang / output folder is hard-coded in the script itself, which isn't\
-ideal if I want to provide the ability to change the extension of it in the future.
 
 ### Verbosity:
 * `verbose_func` (0-2)\
