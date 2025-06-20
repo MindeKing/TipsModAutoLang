@@ -8,16 +8,21 @@
 [![CurseForge Downloads](https://img.shields.io/curseforge/dt/306549?style=for-the-badge&logo=curseforge&label=CurseForge&color=%23F16436)](https://www.curseforge.com/minecraft/mc-mods/tips)
 [![Static Badge](https://img.shields.io/badge/Github-Darkhax--Minecraft%2FTips-white?style=for-the-badge&logo=github&color=%23181717)](https://github.com/Darkhax-Minecraft/Tips)
 
+<ins>Please check out the "Tips" mod wiki and documentation if you wish to better familiarize yourself with the mod:</ins>\
+<sup>(It's really not perfect, and it's mising some critical information, but hopefully it shouldn't take you too long to figure out the basics.)</sup>
+
+[![Static Badge](https://img.shields.io/badge/Github-Tips%2Fwiki%2FLatest--Documentation-white?style=for-the-badge&logo=github&color=%23181717)](https://github.com/Darkhax-Minecraft/Tips/wiki/Latest-Documentation)
+
 </div>
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
-This is a batch script designed to simplify and streamline file creation in tip packs for Darkhax-Minecraft's "Tips" mod for Minecraft.
+*MindeKing's "Tips" Mod Auto-Lang Tool* is a batch script designed to simplify and streamline file creation in tip packs for Darkhax-Minecraft's "Tips" mod for Minecraft.
 
 It was made specifically with "Tips-fabric-1.21.1-21.1.2" as a reference, but I have no reason to believe it shouldn't work for other versions of the mod since this script is so simple in its opperation.
 
-All you need to do is simply provide a list of loading screen tip titles, and the script will create all the files and reference keys you need, all referenced in one easy-to-edit language file.
+All you need to do is simply provide a .txt list of potential loading screen tip names, and the script will create all the files and reference keys you need, all referenced in one easy-to-edit language / output file.
 
-An example tip file list in the form of "vanillatweaks_datapacks.txt" is included so that users can instantly get a sense of what it's like to run the script and what it does.
+An example tip file list, in the form of "vanillatweaks_datapacks.txt", is included so that users can instantly get a sense of what it's like to run the script and what it does.
 
 Highly configurable.
 
@@ -119,7 +124,16 @@ texst
 Same as *tip key prefix*, but it appends the specified string to the end of each tip's reference key instead.
 
 * `__custom_title_key` [any valid string / blank]\
-texst
+Use this setting if you want your tips to have a custom title.\
+Once the lang / output file is generated, at the top of the file should be your\
+*custom title key* followed by text reading "placeholder".\
+Whatever you change "placeholder" to will become the title of all tips generated with\
+this *custom title key*.\
+(you also need to make sure that the tip / entry files are set up to receive the\
+*custom title key* in your *tip file template* file.)
+
+  Otherwise, if left blank, all tips will be assigned the "Tips" mod default\
+title of, "tipsmod.title.default".
 
 ### General Settings:
 * `__open_output_folder` [true / false]\
