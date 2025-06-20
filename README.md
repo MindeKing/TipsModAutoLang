@@ -10,7 +10,7 @@ Alpha version 4.0.0
 [![Static Badge](https://img.shields.io/badge/Github-Darkhax--Minecraft%2FTips-white?style=for-the-badge&logo=github&color=%23181717)](https://github.com/Darkhax-Minecraft/Tips)
 
 <ins>Please check out the "Tips" mod wiki and documentation if you wish to better familiarize yourself with the mod:</ins>\
-<sup>(It's really not perfect, and it's mising some critical information, but hopefully it shouldn't take you too long to figure out the basics.)</sup>\
+<sup>(It's really not perfect, and it's missing some critical information, but hopefully it shouldn't take you too long to figure out the basics.)</sup>\
 <sup>((Not required.))</sup>
 
 [![Static Badge](https://img.shields.io/badge/Github-Tips%2Fwiki%2FLatest--Documentation-white?style=for-the-badge&logo=github&color=%23181717)](https://github.com/Darkhax-Minecraft/Tips/wiki/Latest-Documentation)
@@ -20,7 +20,7 @@ Alpha version 4.0.0
 
 *MindeKing's "Tips" Mod Auto-Lang Tool* is a batch script designed to simplify and streamline file creation in tip resource packs for Darkhax-Minecraft's "Tips" mod for Minecraft.
 
-It was made specifically with "Tips-fabric-1.21.1-21.1.2" as a reference, but I have no reason to believe it shouldn't work for other versions of the mod since this script is so simple in its opperation.
+It was made specifically with "Tips-fabric-1.21.1-21.1.2" as a reference, but I have no reason to believe it shouldn't work for other versions of the mod since this script is so simple in its operation.
 
 All you need to do is simply provide a .txt list of potential loading screen tip names, and the script will create all the files and reference keys you need, all referenced in one easy-to-edit language / output file.
 
