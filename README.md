@@ -201,4 +201,6 @@ https://www.dostips.com - for some functions used in the script.
 
 https://ss64.com - for being far more helpful than Microsoft's own commands guides.
 
+yt-dlp for inspiration.
+
 My father, sibling, and those I know online who claimed to want to assist with bug testing (you know who you are).
