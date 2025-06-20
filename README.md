@@ -208,6 +208,6 @@ https://ss64.com - for being far more helpful than Microsoft's own commands guid
 
 yt-dlp - for inspiration.
 
-AI coding tools - for sometimes the only way to do something the right way is to see it done the wrong way first. (Also because I knew literally nothing about batch script before going into this, and CGPT is a significantly better "search engine" for this stuff than Google.)
+AI coding tools - for, sometimes, the only way to do something the right way is to first see it done the wrong way. (Also because I knew literally nothing about batch script before going into this, and CGPT is a significantly better "search engine" for this stuff than Google.)
 
 My father, sibling, and those I know online who claimed to want to assist with bug testing (you know who you are).
