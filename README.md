@@ -9,7 +9,8 @@
 [![Static Badge](https://img.shields.io/badge/Github-Darkhax--Minecraft%2FTips-white?style=for-the-badge&logo=github&color=%23181717)](https://github.com/Darkhax-Minecraft/Tips)
 
 <ins>Please check out the "Tips" mod wiki and documentation if you wish to better familiarize yourself with the mod:</ins>\
-<sup>(It's really not perfect, and it's mising some critical information, but hopefully it shouldn't take you too long to figure out the basics.)</sup>
+<sup>(It's really not perfect, and it's mising some critical information, but hopefully it shouldn't take you too long to figure out the basics.)</sup>\
+<sup>((Not required.))</sup>
 
 [![Static Badge](https://img.shields.io/badge/Github-Tips%2Fwiki%2FLatest--Documentation-white?style=for-the-badge&logo=github&color=%23181717)](https://github.com/Darkhax-Minecraft/Tips/wiki/Latest-Documentation)
 
