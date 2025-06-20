@@ -148,7 +148,8 @@ Helpful if the output folder and batch script aren't in the same location.
 ### Optional Settings:
 * `new_manual_defaults` (0,1)\
 Exports all entered settings into a New Defaults file. Automatically renames itself if conflicts are detected.\
-Useful if you want to create multiple presets via the script, to ensure all provided settings are valid.
+Useful if you want to create multiple presets via the script, to ensure all provided settings are valid.\
+Also useful if you want to provide a list of settings used for debugging purposes.
 
 ### Not-yet-implemented Settings:
 * `__tip_folder_name` [valid path to potential folder and \ or any valid string]\
