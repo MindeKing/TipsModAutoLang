@@ -1,4 +1,5 @@
 # Minecraft "Tips" Mod Auto-Lang Tool
+Version 3.0.2-alpha
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
 <div align="center">
   
