@@ -238,7 +238,7 @@ REM ==================== Output File ====================
 REM __lang_file_name [any valid string]
 REM __lang_file_ext [any valid string]
 set "LFi=!__lang_file_name!!__lang_file_ext!
-REM __lang_file_template [path to existing .txt / blank]
+REM __lang_file_template [path to existing .txt]
 set "LFiTeP=!__lang_file_template_path!"
 set "LFiTeN=!__lang_file_template_name!"
 REM ==================== Keys ====================
@@ -1404,12 +1404,12 @@ REM __tip_file_prefix [any valid string / blank]
 REM __tip_file_suffix [any valid string / blank]
 REM __tip_file_dupes [ask / keep / replace]
 REM __tip_file_reformat [true / false]
-REM __tip_file_template [path to existing .txt / blank]
+REM __tip_file_template [path to existing .txt]
 REM __tip_file_ext [any valid string]
 REM ==================== Output File ====================
 REM __lang_file_name [any valid string]
 REM __lang_file_ext [any valid string]
-REM __lang_file_template [path to existing .txt / blank]
+REM __lang_file_template [path to existing .txt]
 REM ==================== Keys ====================
 REM __tip_key_prefix [any valid string / blank]
 REM __tip_key_suffix [any valid string / blank]
@@ -1535,10 +1535,10 @@ REM __tip_file_reformat [true / false]
 		)
 	)
 	call :new_manual_defaults "__tip_file_reformat"
-REM __tip_file_template [path to existing .txt / blank]
+REM __tip_file_template [path to existing .txt]
 	set "pmd_msg_set=__tip_file_template: "
 	set "pmd_msg_blank=__tip_file_template blank"
-	call :processing_md "__tip_file_template" 1 ".txt" "pmd_msg_set" "pmd_msg_success" "pmd_msg_blank" 1
+	call :processing_md "__tip_file_template" 1 ".txt" "pmd_msg_set" "pmd_msg_success" "pmd_msg_blank" 0
 	if not "!__tip_file_template!"=="" (
 		call :bullet_s "!__tip_file_template_name!" located.
 	)
@@ -1575,7 +1575,7 @@ REM __lang_file_ext [any valid string]
 		call :bullet_s The output file's extension will be "!__lang_file_ext!".
 	)
 	call :new_manual_defaults "__lang_file_ext"
-REM __lang_file_template [path to existing .txt / blank]
+REM __lang_file_template [path to existing .txt]
 	set "pmd_msg_set=Provide the path to the lang template .txt file: "
 	set "pmd_msg_blank=If no lang template is provided, the resulting output file will be empty."
 	call :processing_md "__lang_file_template" 1 ".txt" "pmd_msg_set" "pmd_msg_success" "pmd_msg_blank" 0
