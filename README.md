@@ -34,7 +34,7 @@ Still under development, but I wanted to get a head-start on the GitHub page.
 
 Although the "Tips" mod has built-in support for text formatting (as seen in its wiki), if you want more granular control in your tips or titles, visit [the Minecraft Wiki's formatting code editor](https://minecraft.wiki/w/Formatting_codes#Formatting_code_editor), and copy the "output" text into your lang .json file for the tip / title you want to format.
 
-## Problem(s): 
+## Problem(s) (without script): 
 * Normally, in order to make a tip resource pack, you have to:
   * Create an individual .json file for every loading screen tip you want to add,
   * and write down each tip's text in in each file,
@@ -42,7 +42,7 @@ Although the "Tips" mod has built-in support for text formatting (as seen in its
 * Not much documentation exists for the 1.21.1 version of the "Tips" mod.
 * I havent been able to find a single tip resource pack on Modrinth, probably because they're so tedious to make.
 * There are too few loading screen tips present in the vanilla mod.
-## Solution(s): 
+## Solution(s) (with script): 
 * Bullet
 ## What This Script Does:
 * Bullet
