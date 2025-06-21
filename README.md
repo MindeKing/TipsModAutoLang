@@ -210,7 +210,7 @@ https://www.dostips.com - for some functions used in the script.
 
 https://ss64.com - for being far more helpful than Microsoft's own commands guides.
 
-yt-dlp - for inspiration.
+[yt-dlp](https://github.com/yt-dlp/yt-dlp) - for inspiration.
 
 AI coding tools - for, sometimes, the only way to do something the right way is to first see it done the wrong way. (Also because I knew literally nothing about batch script before going into this, and CGPT is a significantly better "search engine" for this stuff than Google.)
 
