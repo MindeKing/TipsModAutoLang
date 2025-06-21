@@ -1,16 +1,25 @@
+; Terms:
 __tip_file_list 
 __namespace_overwrite 
+
+; Entry Files:
 __tip_file_rep_space "_"
 __tip_file_prefix 
 __tip_file_suffix 
 __tip_file_dupes "ask"
 __tip_file_reformat 
 __tip_file_template "Tip file template.txt"
+
+; Output File:
 __lang_file_name "en_us"
 __lang_file_template "Lang file template.txt"
+
+; Reference Keys:
 __tip_key_prefix 
 __tip_key_suffix 
 __custom_title_key "tipsmod.title.default"
+
+; General Settings:
 __open_output_folder 
 
 ; Not-yet-implemented settings (they don't do anything, but the script will have a fit if it can't find them, so just leave them as they are):
