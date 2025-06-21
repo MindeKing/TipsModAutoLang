@@ -158,7 +158,7 @@ Useful if you want to create multiple presets via the script, to ensure all prov
 Also useful if you want to provide a list of settings used for debugging purposes.
 
 ### Not-yet-implemented Settings:
-(Maybe not ever.)
+<sup>(Maybe not ever.)</sup>
 * `__tip_folder_name` [valid path to potential folder and \ or any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
 This is the name of the folder in which the entry file(s) will go.\
