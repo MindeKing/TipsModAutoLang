@@ -112,9 +112,9 @@ if exist "!defaults!" (
 					set "%%A_set=1"
 					set "!default_setting!=!default_value!"
 					if "!default_value!"=="" (
-						echo "!default_setting!" has been set to default of UNDEFINED ^(meaning, it's disabled^).
+						echo "!format_highlight!!default_setting!!format_reset!" has been set to default of !format_highlight!UNDEFINED!format_reset! ^(meaning, it's disabled^).
 					) else (
-						echo "!default_setting!" has been set to default of "!default_value!".
+						echo "!format_highlight!!default_setting!!format_reset!" has been set to default of "!format_highlight!!default_value!!format_reset!".
 					)
 					set /a defaults_counter+=1
 				)
@@ -127,6 +127,7 @@ if exist "!defaults!" (
 	) else if !defaults_counter! EQU 1 (echo 1 setting loaded from "!defaults_name!".
 	) else if !defaults_counter! GEQ 2 (echo !defaults_counter! settings loaded from "!defaults_name!".)
 	echo Finished defining default values for settings defined in "!defaults_name!".
+	echo.
 )
 REM Validate existence of aforementioned file
 set "config_counter=0"
@@ -151,9 +152,9 @@ if exist "!config!" (
 					if defined %%A (set /a overwritten_counter+=1)
 					set "!configed_setting!=!configed_value!"
 					if "!configed_value!"=="" (
-						echo "!configed_setting!" has been set to UNDEFINED ^(meaning, it's disabled^).
+						echo "!format_highlight!!configed_setting!!format_reset!" has been set to !format_highlight!UNDEFINED!format_reset! ^(meaning, it's disabled^).
 					) else (
-						echo "!configed_setting!" has been set to "!configed_value!".
+						echo "!format_highlight!!configed_setting!!format_reset!" has been set to "!format_highlight!!configed_value!!format_reset!".
 					)
 					set /a config_counter+=1
 				)
@@ -165,24 +166,28 @@ if exist "!config!" (
 	if !config_counter! EQU 0 (echo No settings have been read from "!config_name!".
 	) else if !config_counter! EQU 1 (echo 1 setting loaded from "!config_name!".
 	) else if !config_counter! GEQ 2 (echo !config_counter! settings loaded from "!config_name!".)
+	echo Finished defining configured values for settings defined in "!config_name!".
+	echo.
 	if !overwritten_counter! EQU 0 (echo No settings in "!defaults_name!" have been overwritten by "!config_name!".
 	) else if !overwritten_counter! EQU 1 (echo 1 setting in "!defaults_name!" overwritten by "!config_name!". (
 	) else if !overwritten_counter! GEQ 2 (echo !config_counter! settings in "!defaults_name!" overwritten by "!config_name!".)
-	echo Finished defining configured values for settings defined in "!config_name!".
 )
 if not "!advanced_mode!" GEQ "1" (
-	set barbie=!barbie!
+	set "__tip_file_ext=.json"
+	set "__lang_file_ext=.json"
+	for %%S in (
+		"__tip_file_ext"
+		"__lang_file_ext"
+	) do (
+		set "%%~S_set=4"
+	)
 )
 if not "!advanced_mode!" GEQ "2" (
 	set "__tip_folder_name=tips"
 	set "__lang_folder_name=lang"
-	set "__tip_file_ext=.json"
-	set "__lang_file_ext=.json"
 	for %%S in (
 		"__tip_folder_name"
 		"__lang_folder_name"
-		"__tip_file_ext"
-		"__lang_file_ext"
 	) do (
 		set "%%~S_set=4"
 	)
