@@ -99,7 +99,8 @@ I'd highly recommend not editing this file.
 * `__tip_file_reformat` [true / false]\
 If set to `true`, updates the contents of ALL files in the tips / entries folder,\
 regardless if you're using a *tip file list*.
-Will still create new files present in the *tip file list* if one is provided.
+
+  Will still create new files present in the *tip file list* if one is provided.
 
 * `__tip_file_ext` [any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
