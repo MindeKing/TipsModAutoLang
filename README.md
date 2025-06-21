@@ -100,7 +100,7 @@ replaced too.
 
 * `__tip_file_template` [path to existing .txt / blank]\
 The *tip file template* refers to a .txt file containing the basic layout that\
-tip files will be generated with.
+tip files will be generated with.\
 Most importantly here are the variables `CTKey` and `TipKey`, which will be used\
 to automatically fill every tip file with the *custom title reference key* (if\
 provided) and that tip's unique *tip reference key*.\
