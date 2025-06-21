@@ -222,7 +222,7 @@ This makes it such that, even if settings are provided by the defaults or config
 * `advanced_mode` (0,2)\
 Enables configuration of:
   * "tips" and "lang" folder names.
-  * File extensions for the tip / entry and lang / output files.
+  * File extensions for the tip(s) and lang files.
 
 ## Credits:
 [MindeKing](https://github.com/MindeKing) - for writing most of the script.
