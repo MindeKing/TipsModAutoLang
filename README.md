@@ -170,10 +170,9 @@ this might become the way to do that.\
 But it's also a very niche use-case that'd probably be very difficult to account for, so don't expect this to come anytime soon.
 
 * `__tip_file_reformat` [true / false]\
-Enable this setting if you're generating new files based on a *tip file list*, but\
-you also want the contents of every file in the tips / entries folder to be updated:
-  * To the contents of the *tip file template* file
-  * With new *tip key pre/suffix*s
+If set to `true` updates the contents of ALL files in the tips / entries folder,\
+regardless if you're using a *tip file list*.
+Will still create new files present in the *tip file list* if one is provided.
 
 ### Verbosity:
 * `verbose_func` (0-2)\
