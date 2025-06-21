@@ -217,8 +217,7 @@ Provides more information about the "confirm_n" function.
 ### Other Debug Settings:
 * `force_unset` (0,1)\
 Forcibly sets all "var_set" variables to 0 in the ":unset_settings" function.\
-This makes it such that, even if settings are provided by the defaults or config files,\
-the script will think that they aren't.
+This makes it such that, even if settings are provided by the defaults or config files, the script will think that they aren't.
 
 * `advanced_mode` (0,2)\
 Enables changing the "tips" and "lang" folder names via the defaults / config files.\
