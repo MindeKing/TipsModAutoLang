@@ -97,8 +97,8 @@ I'd highly recommend not editing this file.
   Blank entry is only allowed if no *tip file list* is provided.
 
 * `__tip_file_reformat` [true / false]\
-If set to `true`, updates the contents of ALL files in the tips / entries folder,\
-regardless if you're using a *tip file list*.
+If set to `true`, replaces the contents of ALL files in the tips / entries folder based\
+on the contents of the *tip file template*, regardless if you're using a *tip file list*.
 
   Will still create new files present in the *tip file list* if one is provided.
 
