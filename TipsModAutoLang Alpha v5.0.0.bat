@@ -277,8 +277,8 @@ echo TFiTeN is "!__tip_file_template_name!"
 echo TFiExt is "!__tip_file_ext!"
 echo ==================== Output File ====================
 echo LFi is "!__lang_file_name!!__lang_file_ext!"
-echo LFiTeP is "!__lang_file_template_path!" & REM Not done yet
-echo LFiTeN is "!__lang_file_template_name!" & REM Not done yet
+echo LFiTeP is "!__lang_file_template_path!"
+echo LFiTeN is "!__lang_file_template_name!"
 echo ==================== Keys ====================
 echo TKeyPre is "!__tip_key_prefix!"
 echo TKeySuf is "!__tip_key_suffix!"
@@ -292,8 +292,8 @@ echo OpOuFo is "!__open_output_folder!"
 REM
 REM ======================================== More Term Definition ========================================
 
-if "!NaSpP!"=="" (
-	if not "!TFiLiP!"=="" (
+if not defined NaSpP (
+	if defined TFiLiP (
 		for %%A in ("!TFiLiP!") do (
 			set "NaSpN=%%~nA"
 			set "NaSpP=%%~dpnA"
@@ -308,8 +308,9 @@ if not exist "!LFolP!\" (mkdir "!LFolP!")
 set "LFiP=!LFolP!\!LFi!"
 set "LFiP_temp=!LFolP!\!__lang_file_name!_temp!__lang_file_ext!"
 
+if defined TFiLiP (
 echo.
-echo ══════════════════════════════════════════════════ Entry File Creation ═════════════════════════════════════════════════
+echo !format_subsection!══════════════════════════════════════════════════ Entry File Creation ═════════════════════════════════════════════════!format_reset!
 
 REM Read every line in the TipFileListPath and create a TipFile file based on that line's string, plus the file-fixes.
 set "title_default=!title_default_og! is checking the contents of the "!__tip_folder_name!" folder..."
@@ -319,15 +320,33 @@ for /f "usebackq delims=" %%L in ("!TFiLiP!") do (
 	call :make_valid_name "line" 1
 	for %%T in ("!line!") do (
 		set "Tip=%%~T"
-		set "TFi=!TFiPre!!Tip!!TFiSuf!!TFiExt!"
+		set "TFiN=!TFiPre!!Tip!!TFiSuf!!TFiExt!"
+		set "TFiP=!TFolP!\!TFiN!"
 		set "TipKey=!TKeyPre!!Tip!!TKeySuf!"
-		call :TipFile_conflict "!TFolP!\!TFi!" "!TFiPre!!Tip!!TFiSuf!" "!TFiExt!"
+		call :TipFile_conflict "!TFiP!" "!TFiPre!!Tip!!TFiSuf!" "!TFiExt!"
 	)
 )
 set "title_default=!title_default_og!"
 title !title_default_og!
+)
+
+if /i "!TFiRefo:~0,1!"=="t" (
 echo.
-echo ═════════════════════════════════════════════════ Output File Creation ═════════════════════════════════════════════════
+echo !format_subsection!══════════════════════════════════════════════════ Entry File Reformat ═════════════════════════════════════════════════!format_reset!
+
+for /r "%TFolP%" %%F in (*%TFiExt%) do (
+	set "TFiN=%%~nxF"
+	set "TFiP=%%~fF"
+	echo Reformatting the contents of "!TFiN!".
+	title !title_default_og! is reformatting the contents of "!TFiN!"..."
+	call :Get_tip_key "TFiP"
+	break>"!TFiP!"
+	call :Output_TFiTe_lines
+)
+)
+
+echo.
+echo !format_subsection!═════════════════════════════════════════════════ Output File Creation ═════════════════════════════════════════════════!format_reset!
 
 del "!LFiP_temp!" 2>nul
 REM Check if LangFile already exists.
@@ -335,7 +354,7 @@ REM Check if LangFile already exists.
 if exist "!LFiP!" (
 if /i not "!TFiDupe:~0,1!"=="r" (
 	echo.
-	echo The file, "!LFi!" already exists
+	echo "!LFi!" already exists
 	call :confirm_n "Do you want to replace it? (Y/N): " "0nf2 1yt" "1" "LFiP_exists"
 	if /i not "!LFiP_exists!"=="1" (
 		call :confirm_n "Would you like to provide a new name? (Y/N): " "0nf2 1yt" "1" "LFiP_exists"
@@ -403,7 +422,7 @@ if /i "!OpOuFo:~0,1!"=="t" (
 )
 
 echo.
-echo ═════════════════════════════════════════════════════════ DONE ═════════════════════════════════════════════════════════
+echo !format_subsection!═════════════════════════════════════════════════════════ DONE ═════════════════════════════════════════════════════════!format_reset!
 pause
 pause
 pause
@@ -440,16 +459,17 @@ echo Logic section and nowhere else.
 echo.
 
 :TipFile_conflict "path"
-REM               -- path [in] - The path
+REM               1-- path [in] - The path
 if "!verbose_func!" GEQ "1" (echo ":TipFile_conflict" function called.)
 REM Read every line in the TipFileListPath and create a TipFile file based on that line's string, plus the file-fixes.
 REM set "fc_path=%~1"
 REM set "fc_base=%~2"
 REM set "fc_extension=%~3"
-if exist "!TFolP!\!TFi!" (
+set "TFiP=!TFolP!\!TFiN!"
+if exist "!TFiP!" (
 	if /i "!TFiDupe:~0,1!"=="a" (
 		if not "!TipFile_conflict_default!"=="1" (
-			echo The file, "!TFi!" already exists.
+			echo "!TFiN!" already exists.
 			echo You can:
 			echo     ^(1^). !format_underline!R!format_reset!eplace the original file
 			echo     ^(2^). !format_underline!K!format_reset!eep the original file
@@ -474,43 +494,52 @@ if exist "!TFolP!\!TFi!" (
 			set /p "TipFile_conflict=Please provide new name: "
 			title !title_default_og!
 			call :make_valid_name "TipFile_conflict"
-			set "TFi=!TFiPre!!TipFile_conflict!!TFiSuf!!TFiExt!"
+			set "TFiN=!TFiPre!!TipFile_conflict!!TFiSuf!!TFiExt!"
 			REM This goto might result in the breaking of this section of the script.
 			goto :TipFile_conflict
 		) else if "!TipFile_conflict:~0,1!"=="3" (
-			title !title_default_og! is renaming "!TFi!".
+			title !title_default_og! is renaming "!TFiN!"...
 			set "TFi_counter=1"
 			:TFi_counter_loop
-			if exist "!TFolP!\!TFi!" (
-				set "TFi=!TFiPre!!Tip!!TFiSuf!_!TFi_counter!!TFiExt!"
-				set /a TFi_counter=TFi_counter+1
+			if exist "!TFolP!\!TFiN!" (
+				set "TFiN=!TFiPre!!Tip!!TFiSuf!_!TFi_counter!!TFiExt!"
+				set /a TFi_counter+=1
 				REM This go to might result in the breaking of this section of the script.
 				goto :TFi_counter_loop
 			) else (
-				for /f "usebackq delims=" %%L in ("!TFiTeP!") do (set "line=%%~L" & call echo !line!) >> "!TFolP!\!TFi!
-				echo "!TFi!" Has been automatically named and created.
+				call :Output_TFiTe_lines
+				echo "!TFiN!" Has been automatically named and created.
 				goto :TipFile_conflict_end
 			)
 		) else (call :error_message_moderate TipFile_conflict, "!TipFile_conflict!" is invalid.)
 	) else if /i "!TFiDupe:~0,1!"=="k" (
 		:TipFile_conflict_keep
-		title !title_default_og! is keeping "!TFi!".
-		echo The file, "!TFi!" already exists. Keeping it.
+		title !title_default_og! is keeping "!TFiN!".
+		echo "!TFiN!" already exists. Keeping it.
 		goto :TipFile_conflict_end
 	) else if /i "!TFiDupe:~0,1!"=="r" (
 		:TipFile_conflict_replace
-		title !title_default_og! is replacing "!TFi!".
-		del "!TFolP!\!TFi!"
-		for /f "usebackq delims=" %%L in ("!TFiTeP!") do (set "line=%%~L" & call echo !line!) >> "!TFolP!\!TFi!"
-		echo Replaced "!TFi!".
+		title !title_default_og! is replacing "!TFiN!"...
+		del "!TFiP!"
+		call :Output_TFiTe_lines
+		echo Replaced "!TFiN!".
 		goto :TipFile_conflict_end
+		)
 	) else (call :error_message_moderate TFiDupe, "!TFiDupe!" is invalid.)
 ) else (
-	title !title_default_og! is creating "!TFi!".
-	echo "!TFi!" does not yet exist. Creating it.
-	for /f "usebackq delims=" %%L in ("!TFiTeP!") do (set "line=%%~L" & call echo !line!) >> "!TFolP!\!TFi!"
+	title !title_default_og! is creating "!TFiN!"...
+	echo "!TFiN!" does not yet exist. Creating it.
+	call :Output_TFiTe_lines
 )
 :TipFile_conflict_end
+goto :EOF
+
+:Output_TFiTe_lines
+if "!verbose_func!" GEQ "1" (echo ":Output_TFiTe_lines" function called for !TFiN!.)
+for /f "tokens=1,* usebackq delims=0123456789" %%L in (`find /n /v "" ^< "!TFiTeP!"`) do (
+	set "line=%%~M"
+	>> "!TFiP!" call echo(!line:~1!)
+)
 goto :EOF
 
 :Lang_template_fill
@@ -519,7 +548,7 @@ for /r "%TFolP%" %%Z in (*%TFiExt%) do (set "LTF_final_file=%%~nZ")
 for /r "%TFolP%" %%F in (*%TFiExt%) do (
 	set "LTF_file=%%~fF"
 	set "LTF_file_name=%%~nxF"
-	call :Get_tip_key
+	call :Get_tip_key "LTF_file"
 	if not "%%~nF"=="!LTF_final_file!" (
 		for /f "usebackq delims=" %%L in ("%LFiTeP%") do (
 			set "line=%%~L"
@@ -538,9 +567,11 @@ for /r "%TFolP%" %%F in (*%TFiExt%) do (
 )
 goto :EOF
 
-:Get_tip_key
-if "!verbose_func!" GEQ "1" (echo Get_tip_key function called for "!LTF_file_name!".)
-for /f "usebackq delims=" %%L in ("!LTF_file!") do (
+:Get_tip_key "variable_name"
+REM         1-- variable_name [in] - The file from which you're taking the tip.
+set "GTK_input=!%~1!"
+if "!verbose_func!" GEQ "1" (echo Get_tip_key function called for "!%~1!".)
+for /f "usebackq delims=" %%L in ("!GTK_input!") do (
 	if not "!captured!"=="1" (
 		set "line=%%~L"
 		REM Find the "text" section.
@@ -551,14 +582,12 @@ for /f "usebackq delims=" %%L in ("!LTF_file!") do (
 			echo !line! | findstr /i /c:"\"translate\"" >nul
 			if not errorlevel 1 (
 				for /f "tokens=2 delims=:" %%T in ("!line!") do (
-					REM echo Text translate reference key found^^!
 					set "TipKey=%%~T"
 					set "TipKey=!TipKey:,=!"
 					set "TipKey=!TipKey:"=!"
 					set "TipKey=!TipKey:~1!"
 					set "captured=1"
 					set "found_text_section="
-					)
 				)
 			)
 		)
@@ -1514,7 +1543,7 @@ REM __tip_file_dupes [ask / keep / replace]
 	call :new_manual_defaults "__tip_file_dupes"
 REM __tip_file_reformat [true / false]
 	:md__tip_file_reformat
-	set "pmd_msg_set=__tip_file_reformat. True or False?: "
+	set "pmd_msg_set=True or False?: "
 	set "pmd_msg_blank=Can't be nothing. Gotta be True or False."
 	call :processing_md "__tip_file_reformat" -1 "" "pmd_msg_set" "pmd_msg_success" "pmd_msg_blank" 0
 	echo !__tip_file_reformat:~0,1! | findstr /i /r "^[0fn]" >nul
