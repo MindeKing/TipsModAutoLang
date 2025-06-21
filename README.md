@@ -1,5 +1,5 @@
 # Minecraft "Tips" Mod Auto-Lang Tool
-Alpha version 4.0.0
+Alpha version 5.0.0
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
 <div align="center">
   
@@ -96,6 +96,11 @@ I'd highly recommend not editing this file.
 
   Blank entry is only allowed if no *tip file list* is provided.
 
+* `__tip_file_reformat` [true / false]\
+If set to `true` updates the contents of ALL files in the tips / entries folder,\
+regardless if you're using a *tip file list*.
+Will still create new files present in the *tip file list* if one is provided.
+
 * `__tip_file_ext` [any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
 Whether you want the tip / entry files to be output as anything other than .json.\
@@ -168,11 +173,6 @@ I do not know why I made this a setting you can change.
 If you have multiple *tip file list*s that you want to turn into namespaces all with just one opperation of the script,\
 this might become the way to do that.\
 But it's also a very niche use-case that'd probably be very difficult to account for, so don't expect this to come anytime soon.
-
-* `__tip_file_reformat` [true / false]\
-If set to `true` updates the contents of ALL files in the tips / entries folder,\
-regardless if you're using a *tip file list*.
-Will still create new files present in the *tip file list* if one is provided.
 
 ### Verbosity:
 * `verbose_func` (0-2)\
