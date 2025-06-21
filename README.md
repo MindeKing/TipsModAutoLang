@@ -204,8 +204,8 @@ for, so don't expect this to come anytime soon.
 
   (One major issue with wanting to implement a batch processing system is you can\
 only provide one set of pre/suffixes and reference keys per operation of the\
-script, and it's be a lot of work to try getting around that for a feature that\
-likely nobody would even use or need to use in the first place.)
+script, and it'd be a lot of work to try getting around that for a feature that\
+likely nobody would even use or even need to use in the first place.)
 </details>
 
 ## Development and Debug Settings:
