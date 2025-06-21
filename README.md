@@ -216,12 +216,13 @@ Provides more information about the "confirm_n" function.
 
 ### Other Debug Settings:
 * `force_unset` (0,1)\
-Forcibly sets all "var_set" variables to 0 in the ":unset_settings" function.\
+Forcibly sets all "var_set" variables to blank in the ":unset_settings" function.\
 This makes it such that, even if settings are provided by the defaults or config files, the script will think that they aren't.
 
 * `advanced_mode` (0,2)\
-Enables changing the "tips" and "lang" folder names via the defaults / config files.\
-Enables changing the file extensions of the tip / entry and lang / output files.
+Enables configuration of:
+  * "tips" and "lang" folder names.
+  * File extensions for the tip / entry and lang / output files.
 
 ## Credits:
 [MindeKing](https://github.com/MindeKing) - for writing most of the script.
