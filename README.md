@@ -176,6 +176,7 @@ If you have multiple *tip file list*s that you want to turn into namespaces all 
 this might become the way to do that.\
 But it's also a very niche use-case that'd probably be very difficult to account for, so don't expect this to come anytime soon.
 
+## Development and Debug Settings:
 ### Verbosity:
 * `verbose_func` (0-2)\
 Provides more information about every other function that doesn't have its own verbosity setting.
