@@ -105,7 +105,7 @@ on the contents of the *tip file template*, regardless if you're using a *tip fi
 * `__tip_file_ext` [any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
 Whether you want the tip / entry files to be output as anything other than .json.\
-Again, this setting doesn't make sense if you're trying to use this script solely for the "Tips" mod,\
+This setting doesn't make sense if you're trying to use this script solely for the "Tips" mod,\
 but my delusions of grandeur know no bounds.
 
 ### Output File:
@@ -119,7 +119,7 @@ locale codes that Minecraft (and, by extension, the "Tips" mod) uses.
 * `__lang_file_ext` [any valid string]\
 <sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
 Whether you want the tip / entry files to be output as anything other than .json.\
-Again, this setting doesn't make sense if you're trying to use this script solely for the "Tips" mod,\
+This setting doesn't make sense if you're trying to use this script solely for the "Tips" mod,\
 but my delusions of grandeur know no bounds.
 
 * `__lang_file_template` [path to existing .txt]\
