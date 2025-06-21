@@ -85,7 +85,7 @@ each file instead.
 
 * `__tip_file_dupes` [ask / keep / replace]\
 Select, by default, whether you want the script to automatically keep or replace\
-any file conflicts when generating tip files.
+any file conflicts when generating tip files.\
 If this setting is set to `ask`, upon any file conflicts being found, you will\
 be given the option to:
   * Keep one file
