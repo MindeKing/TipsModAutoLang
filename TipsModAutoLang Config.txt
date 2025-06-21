@@ -1,8 +1,9 @@
 __tip_file_list "vanillatweaks_datapacks.txt"
-;__namespace_overwrite 
+__namespace_overwrite vanillatweaks_datapacks
 __tip_file_prefix "vt.dp."
 __tip_file_dupes "ask"
 ;__lang_file_name "en_uk"
 __tip_key_prefix "vt.dp.tip."
+__tip_file_reformat "false"
 __custom_title_key "vt.dp.title"
-__open_output_folder
+__open_output_folder n
