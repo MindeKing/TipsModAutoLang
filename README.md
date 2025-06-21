@@ -116,7 +116,7 @@ using a *tip file list*.
   Will still create new files present in the *tip file list* if one is provided.
 
 * `__tip_file_ext` [any valid string]\
-<sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
+<sup>(Doesn't change anything unless `advanced_mode` is `1`.)</sup>\
 Whether you want the tip / entry files to be output as anything other\
 than .json.\
 This setting doesn't make sense if you're trying to use this script solely for\
@@ -131,7 +131,7 @@ Visit https://minecraft.wiki/w/Language for a list of all the locale codes that\
 Minecraft (and, by extension, the "Tips" mod) uses.
 
 * `__lang_file_ext` [any valid string]\
-<sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
+<sup>(Doesn't change anything unless `advanced_mode` is `1`.)</sup>\
 Whether you want the lang / output files to be output as anything other\
 than .json.\
 This setting doesn't make sense if you're trying to use this script solely for\
@@ -166,8 +166,7 @@ of, "tipsmod.title.default".
 Whether the script should or shouldn't open the lang / output folder in a new\
 File Explorer window which the lang / output file is generated.\
 Helpful if the output folder and batch script aren't in the same location.
-#
-#
+
 ### Optional Settings:
 * `new_manual_defaults` (0,1)\
 Exports all entered settings into a New Defaults file.\
@@ -177,22 +176,27 @@ provided settings are valid.\
 Also useful if you want to provide a list of settings used for debugging purposes.
 
 ### Not-yet-implemented Settings:
-<sup>(Maybe not ever.)</sup>
+<details>
+<summary>(Maybe not ever.)</summary>
+
 * `__tip_folder_name` [valid path to potential folder and \ or any valid string]\
-<sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
+<sup>(Doesn't change anything unless `advanced_mode` is `2`.)</sup>\
+<sup>(Buggy. Don't expect it to work.)</sup>\
 This is the name of the folder in which the entry file(s) will go.\
 I don't believe the "Tips" mod will recognize this folder if it is called\
 anything other than "tips".\
 I do not know why I made this a setting you can change.
 
 * `__lang_folder_name` [valid path to potential folder and \ or any valid string]\
-<sup>(doesn't change anything unless `advanced_mode` is `2`)</sup>\
+<sup>(Doesn't change anything unless `advanced_mode` is `2`.)</sup>\
+<sup>(Buggy. Don't expect it to work.)</sup>\
 This is the name of the folder in which the output file will go.\
 I don't believe the "Tips" mod will recognize this folder if it is called\
 anything other than "lang".\
 I do not know why I made this a setting you can change.
 
 * `__batch_file` [path to existing .txt / blank]\
+<sup>(Does literally nothing, no matter what you provide, but it will still ask you to change the file path if it's invalid.)</sup>\
 If you have multiple *tip file list*s that you want to turn into namespaces all\
 with just one operation of the script, this might become the way to do that.\
 But it's also a very niche use-case that'd probably be very difficult to account\
@@ -202,6 +206,7 @@ for, so don't expect this to come anytime soon.
 only provide one set of pre/suffixes and reference keys per operation of the\
 script, and it's be a lot of work to try getting around that for a feature that\
 likely nobody would even use or need to use in the first place.)
+</details>
 
 ## Development and Debug Settings:
 ### Verbosity:
@@ -219,10 +224,11 @@ Provides more information about the "confirm_n" function.
 Forcibly sets all "var_set" variables to blank in the ":unset_settings" function.\
 This makes it such that, even if settings are provided by the defaults or config files, the script will think that they aren't.
 
-* `advanced_mode` (0,2)\
-Enables configuration of:
-  * "tips" and "lang" folder names.
+* `advanced_mode` (0-2)\
+(1) Enables configuration of:
   * File extensions for the tip(s) and lang files.
+(2) Enables configuration of:
+  * "tips" and "lang" folder names (buggy).
 
 ## Credits:
 [MindeKing](https://github.com/MindeKing) - for writing most of the script.
