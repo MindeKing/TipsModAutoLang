@@ -181,7 +181,7 @@ Also useful if you want to provide a list of settings used for debugging purpose
 
 * `__tip_folder_name` [valid path to potential folder and \ or any valid string]\
 <sup>(Doesn't change anything unless `advanced_mode` is `2`.)</sup>\
-<sup>(Buggy. Don't expect it to work.)</sup>\
+<sup>(Likely buggy. Don't expect it to work flawlessly.)</sup>\
 This is the name of the folder in which the entry file(s) will go.\
 I don't believe the "Tips" mod will recognize this folder if it is called\
 anything other than "tips".\
@@ -189,7 +189,7 @@ I do not know why I made this a setting you can change.
 
 * `__lang_folder_name` [valid path to potential folder and \ or any valid string]\
 <sup>(Doesn't change anything unless `advanced_mode` is `2`.)</sup>\
-<sup>(Buggy. Don't expect it to work.)</sup>\
+<sup>(Likely buggy. Don't expect it to work flawlessly.)</sup>\
 This is the name of the folder in which the output file will go.\
 I don't believe the "Tips" mod will recognize this folder if it is called\
 anything other than "lang".\
@@ -226,9 +226,10 @@ This makes it such that, even if settings are provided by the defaults or config
 
 * `advanced_mode` (0-2)\
 (1) Enables configuration of:
-  * File extensions for the tip(s) and lang files.
-(2) Enables configuration of:
-  * "tips" and "lang" folder names (buggy).
+  * File extensions for the tip(s) and lang files. (Works flawlessly.)
+
+  (2) Enables configuration of:
+  * "tips" and "lang" folder names. (Might be buggy.)
 
 ## Credits:
 [MindeKing](https://github.com/MindeKing) - for writing most of the script.
