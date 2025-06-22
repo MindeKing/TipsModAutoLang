@@ -23,11 +23,13 @@ if not "!Light_or_Dark_mode!"=="" (
 )
 if "!ui_color!"=="" (
 	echo.
-	echo If you don't want to be asked this every time, open the .bat file with
-	echo any text editor and put "Light" or "Dark" after the = in the line,
+	echo If you don't want to be asked this every time, open "%~nx0" with
+	echo any text editor and put "Light" or "Dark" after the = in the line:
 	echo set "Light_or_Dark_mode="
 	echo near the top of the script.
+	echo.
 	call :confirm_n "Do you want this script to run in !format_underline!L!format_reset!ight mode or !format_underline!D!format_reset!ark mode?: " "1l 2d" "1" "ui_color"
+	echo.
 )
 if "!ui_color!"=="0" (color f0) else (color 0f)
 call :colorlib
@@ -94,7 +96,8 @@ REM echo config file is !config_name!
 REM Validate existence of aforementioned file
 set "defaults_counter=0"
 if exist "!defaults!" (
-	title !title_default_og! !title_loading! "!defaults_name!"
+	title !title_default_og! is reading "!defaults_name!"...
+	echo Reading contents of "!defaults_name!".
 	REM Load and read defaults file line by line
 	for /f "usebackq delims=" %%L in ("!defaults!") do (
 		set "line=%%L"
@@ -111,10 +114,11 @@ if exist "!defaults!" (
 					set "default_value=!strip_quotes!"
 					set "%%A_set=1"
 					set "!default_setting!=!default_value!"
+					call :table_row_color
 					if "!default_value!"=="" (
-						echo "!format_highlight!!default_setting!!format_reset!" has been set to default of !format_highlight!UNDEFINED!format_reset! ^(meaning, it's disabled^).
+						echo "!format_table_row!!default_setting!!format_reset!" set to default of !format_table_row!UNDEFINED!format_reset! ^(meaning, it's disabled^).
 					) else (
-						echo "!format_highlight!!default_setting!!format_reset!" has been set to default of "!format_highlight!!default_value!!format_reset!".
+						echo "!format_table_row!!default_setting!!format_reset!" set to default of "!format_table_row!!default_value!!format_reset!".
 					)
 					set /a defaults_counter+=1
 				)
@@ -133,7 +137,8 @@ REM Validate existence of aforementioned file
 set "config_counter=0"
 set "overwritten_counter=0"
 if exist "!config!" (
-	title !title_default_og! !title_loading! "!config_name!"
+	title !title_default_og! is reading "!config_name!"...
+	echo Reading contents of "!config_name!".
 	REM Load and read config file line by line
 	for /f "usebackq delims=" %%L in ("!config!") do (
 		set "line=%%L"
@@ -151,10 +156,11 @@ if exist "!config!" (
 					set "%%A_set=2"
 					if defined %%A (set /a overwritten_counter+=1)
 					set "!configed_setting!=!configed_value!"
+					call :table_row_color
 					if "!configed_value!"=="" (
-						echo "!format_highlight!!configed_setting!!format_reset!" has been set to !format_highlight!UNDEFINED!format_reset! ^(meaning, it's disabled^).
+						echo "!format_table_row!!configed_setting!!format_reset!" set to !format_table_row!UNDEFINED!format_reset! ^(meaning, it's disabled^).
 					) else (
-						echo "!format_highlight!!configed_setting!!format_reset!" has been set to "!format_highlight!!configed_value!!format_reset!".
+						echo "!format_table_row!!configed_setting!!format_reset!" set to "!format_table_row!!configed_value!!format_reset!".
 					)
 					set /a config_counter+=1
 				)
@@ -386,32 +392,40 @@ if /i not "!TFiDupe:~0,1!"=="r" (
 	)
 ))
 
+set /a LFi_lines=0 & set "Tips_Section=0"
+for /f "usebackq delims=" %%L in ("%LFiTeP%") do (
+	set "line=%%~L"
+	if "!line!"=="<Tips>" (call :Lang_template_fill_count & set "Tips_Section=1")
+	if "!line!"=="<Final_Tip>" (set "Tips_Section=1")
+	if "!line!"=="</Final_Tip>" (set "Tips_Section=1")
+	if "!Tips_Section!"=="0" (set /a LFi_lines+=1)
+	if "!line!"=="<Final_Tip>" (set "Tips_Section=0")
+	if "!line!"=="</Tips>" (set "Tips_Section=0")
+	if "!line!"=="</Final_Tip>" (set "Tips_Section=0")
+)
+set /a LFi_lines=!LFi_lines!
+if "!ui_color!"=="0" (
+	call :Per_line_progress_bar_set !LFi_lines! 242 241 165 97 214 214
+) else (
+	call :Per_line_progress_bar_set !LFi_lines! 197 15 31 22 198 12
+)
+
+set "Tips_Section=0"
 title !title_default_og! is writing to "!__lang_file_name!_temp!__lang_file_ext!"...
-set "start=0"
-set "end=0"
 REM Read template file line by line.
 for /f "usebackq delims=" %%L in ("%LFiTeP%") do (
 	set "line=%%~L"
-	REM echo line is !line!
-	REM Check for start marker.
-	if "!line!"=="<Tips>" (
-		call :Lang_template_fill
-		set "start=1"
-		set "end=0"
+	if "!line!"=="<Tips>" (call :Lang_template_fill & set "Tips_Section=1")
+	if "!line!"=="<Final_Tip>" (set "Tips_Section=1")
+	if "!line!"=="</Final_Tip>" (set "Tips_Section=1")
+	if "!Tips_Section!"=="0" (
+		call :Per_line_progress_bar Read template file line by line.
+		call echo !line!>>"!LFiP_temp!"
+		call echo !PLPB!  !format_reset!!line!
 	)
-	REM Check for end marker.
-	if "!line!"=="</Tips>" (
-		set "start=0"
-		set "end=1"
-	)
-	if not "!start!"=="1" (
-		if not "!end!"=="1" (
-			call echo !line!>>"!LFiP_temp!"
-			call echo !line!
-		) else (
-			set "end=0"
-		)
-	)
+	if "!line!"=="<Final_Tip>" (set "Tips_Section=0")
+	if "!line!"=="</Tips>" (set "Tips_Section=0")
+	if "!line!"=="</Final_Tip>" (set "Tips_Section=0")
 )
 title !title_default_og!
 
@@ -557,19 +571,74 @@ for /r "%TFolP%" %%F in (*%TFiExt%) do (
 	if not "%%~nF"=="!LTF_final_file!" (
 		for /f "usebackq delims=" %%L in ("%LFiTeP%") do (
 			set "line=%%~L"
-			if "!line!"=="<Tips>" (
-				set "start=1"
-			)
-			if "!line!"=="</Tips>" (
-				set "start=0"
-			)
+			if "!line!"=="</Tips>" (set "start=0")
 			if "!start!"=="1" (
+				call :Per_line_progress_bar Lang_template_fill
 				call echo !line!>>"!LFiP_temp!"
-				call echo !line!
+				call echo !PLPB!  !format_reset!!line!
 			)
+			if "!line!"=="<Tips>" (set "start=1")
 		)
 	)
 )
+goto :EOF
+
+:Lang_template_fill_count
+if "!verbose_func!" GEQ "2" (echo ":Lang_template_fill_count" function called.)
+for /r "%TFolP%" %%Z in (*%TFiExt%) do (set "LTFC_final_file=%%~nZ")
+for /r "%TFolP%" %%F in (*%TFiExt%) do (
+	set "LTFC_file=%%~fF"
+	set "LTFC_file_name=%%~nxF"
+	if not "%%~nF"=="!LTFC_final_file!" (
+		for /f "usebackq delims=" %%L in ("%LFiTeP%") do (
+			set "line=%%~L"
+			if "!line!"=="</Tips>" (set "start=0")
+			if "!start!"=="1" (
+				set /a LFi_lines+=1
+			)
+			if "!line!"=="<Tips>" (set "start=1")
+		)
+	)
+)
+goto :EOF
+
+:Per_line_progress_bar_set line_number
+if "!verbose_func!" GEQ "1" (echo ":Per_line_progress_bar_set" function called.)
+set /a line_number=%~1
+set /a start_R=%~2
+set /a start_G=%~3
+set /a start_B=%~4
+set /a end_R=%~5
+set /a end_G=%~6
+set /a end_B=%~7
+set "start_RGB=[48;2;!start_R!;!start_G!;!start_B!m
+set "end_RGB=[48;2;!end_R!;!end_G!;!end_B!m
+REM echo !start_RGB!start_RGB is %~2;%~3;%~4!format_reset!
+REM echo !end_RGB!end_RGB is %~5;%~6;%~7!format_reset!
+set /a fencepost=!line_number!-1
+set /a step_R=((!end_R!-!start_R!)*1000000)/!fencepost!
+set /a step_G=((!end_G!-!start_G!)*1000000)/!fencepost!
+set /a step_B=((!end_B!-!start_B!)*1000000)/!fencepost!
+REM echo step_R is !step_R!
+REM echo step_G is !step_G!
+REM echo step_B is !step_B!
+set /a counter_R=0
+set /a counter_G=0
+set /a counter_B=0
+set /a PLBP_R=0
+set /a PLBP_G=0
+set /a PLBP_B=0
+set /a PLPB_called=0
+goto :EOF
+:Per_line_progress_bar
+if "!verbose_func!" GEQ "2" (echo ":Per_line_progress_bar" function called by "%*".)
+set /a PLPB_R=(!start_R!+(!step_R!*!PLPB_called!)/1000000)
+set /a PLPB_G=(!start_G!+(!step_G!*!PLPB_called!)/1000000)
+set /a PLPB_B=(!start_B!+(!step_B!*!PLPB_called!)/1000000)
+REM echo RGB is !PLPB_R! !PLPB_G! !!PLPB_B!
+set "PLPB=[48;2;!PLPB_R!;!PLPB_G!;!PLPB_B!m"
+REM echo PLPB_called is !PLPB_called!
+set /a PLPB_called+=1
 goto :EOF
 
 :Get_tip_key "variable_name"
@@ -970,8 +1039,9 @@ REM             -- unset_settings [out] - Returns 1 if there's even a single uns
 if "!verbose_func!" GEQ "1" (echo ":unset_settings" function called.)
 set "unset_settings=0"
 if "!force_unset!"=="1" (echo. & echo [DEBUG]: "force_unset" enabled & echo.)
-echo ^(This section only verifies that the below settings are or aren't present in the
-echo defaults / config files. Just because a setting is green does not mean it is valid.^)
+echo ^(This section only verifies that the below settings are
+echo or aren't present in the defaults / config files.
+echo Just because a setting is green does not mean it is valid.^)
 echo.
 for %%S in (
 "__tip_folder_name"
@@ -998,7 +1068,7 @@ for %%S in (
 	if "!%%~S_set!"=="1" (call :bullet_s "%%~S" has been set by "!defaults_name!".)
 	if "!%%~S_set!"=="2" (call :bullet_s "%%~S" has been set by "!config_name!".)
 	if "!%%~S_set!"=="3" (call :bullet_s "%%~S" has been set / altered by the script / user.)
-	if "!%%~S_set!"=="4" (if not "!advanced_mode!" GEQ "1" (call :bullet_s "%%~S" is hard-coded by script as "!%%~S!".))
+	if "!%%~S_set!"=="4" (if "!advanced_mode!" GEQ "1" (call :bullet_s "%%~S" is hard-coded by script as "!%%~S!".))
 	if not "!%%~S_set!" GEQ "1" (
 		call :bullet_f !format_fg_error!"%%~S" has not been set.!format_reset!
 		set /a unset_settings=unset_settings+1
@@ -1288,6 +1358,32 @@ if "!verbose_func!" GEQ "2" (echo ":bullet_f" function called.)
 echo  !format_error!X!format_reset! %*
 goto :EOF
 
+:table_row_color
+if "!verbose_func!" GEQ "2" (echo ":table_row_color" function called. "ui_color"=="!ui_color!")
+if not defined trc_flop (set "trc_flop=0")
+if "!ui_color!"=="" (
+	goto :trc_dark
+) else if "!ui_color!"=="0" (
+	:trc_light
+	if "!trc_flop!"=="0" (
+		set "trc_flop=1"
+		set "format_table_row=[48;2;192;242;242m!fg_black!"
+	) else (
+		set "trc_flop=0"
+		set "format_table_row=[48;2;180;222;222m!fg_black!"
+	)
+) else if "!ui_color!"=="1" (
+	:trc_dark
+	if "!trc_flop!"=="0" (
+		set "trc_flop=1"
+		set "format_table_row=[38;2;0;255;255m"
+	) else (
+		set "trc_flop=0"
+		set "format_table_row=[38;2;32;205;205m"
+	)
+)
+goto :EOF
+
 :error_message_severe
 if "!verbose_func!" GEQ "2" (echo ":error_message_severe" function called.)
 title !title_default! is Experiencing a Severe Error^^!
@@ -1454,6 +1550,7 @@ REM __open_output_folder [true / false]
 
 echo.
 echo !format_subsection!════════════════════════════════════════════════════════ TERMS ═════════════════════════════════════════════════════════!format_reset!
+if "!advanced_mode!" GEQ "2" (
 REM __tip_folder_name [valid path to potential folder and \ or any valid string]
 	set "pmd_msg_set=Provide the name of the folder that will be used to identify or hold the entry file(s) (recommended: "tips"): "
 	set "pmd_msg_blank=Name of entries folder cannot be blank."
@@ -1468,6 +1565,7 @@ REM __lang_folder_name [valid path to potential folder and \ or any valid string
 	if not "!__lang_folder_name!"=="" (
 		call :bullet_s The folder in which the output file is / will go is called, "!__lang_folder_name!".
 	)
+)
 REM __tip_file_list [path to existing .txt / blank]
 REM should we change it to... if not defined "!__namespace_overwrite!" ()
 	set "pmd_msg_set=Provide the path of the desired .txt list file, or leave blank to disable possibility for file creation / overwriting in the "!__tip_folder_name!" folder: "
@@ -1577,6 +1675,7 @@ REM __tip_file_template [path to existing .txt]
 		call :bullet_s "!__tip_file_template_name!" located.
 	)
 REM __tip_file_ext [any valid string]
+if "!advanced_mode!" GEQ "1" (
 	set "pmd_msg_set=Provide the extension for the entry file(s) belonging to the "!__tip_folder_name!" folder (with or without a . ) (recommended: ".json"): "
 	set "pmd_msg_blank=Although it would be possible to create a file/files without providing an extension, it is not recommended."
 	call :processing_md "__tip_file_ext" 0 "" "pmd_msg_set" "pmd_msg_success" "pmd_msg_blank" 0
@@ -1587,7 +1686,7 @@ REM __tip_file_ext [any valid string]
 		call :bullet_s The all entry files extensions will be marked as "!__tip_file_ext!".
 	)
 	call :new_manual_defaults "__tip_file_ext"
-
+)
 echo.
 echo !format_subsection!═════════════════════════════════════════════════════ OUTPUT FILE ══════════════════════════════════════════════════════!format_reset!
 
@@ -1599,6 +1698,7 @@ REM __lang_file_name [any valid string]
 		call :bullet_s The output file will be named "!__lang_file_name!".
 	)
 REM __lang_file_ext [any valid string]
+if "!advanced_mode!" GEQ "1" (
 	set "pmd_msg_set=Provide the extension for the output file belonging to the "!__lang_folder_name!" folder (with or without a . ) (recommended: ".json"): "
 	set "pmd_msg_blank=Although it would be possible to create a file without providing an extension, it is not recommended."
 	call :processing_md "__lang_file_ext" 0 "" "pmd_msg_set" "pmd_msg_success" "pmd_msg_blank" 0
@@ -1609,6 +1709,7 @@ REM __lang_file_ext [any valid string]
 		call :bullet_s The output file's extension will be "!__lang_file_ext!".
 	)
 	call :new_manual_defaults "__lang_file_ext"
+)
 REM __lang_file_template [path to existing .txt]
 	set "pmd_msg_set=Provide the path to the lang template .txt file: "
 	set "pmd_msg_blank=If no lang template is provided, the resulting output file will be empty."
@@ -1858,8 +1959,8 @@ if "!ui_color!"=="" (
 	set "format_error=!bg_red!!fg_bright_white!"
 	set "format_success=[48;2;50;150;50m!fg_bright_white!"
 	set "format_default=!bg_bright_white!!fg_black!"
-	set "format_warning=[48;2;245;220;32m!fg_black!"
-	set "format_highlight=[48;2;245;220;32m!fg_black!"
+	set "format_warning=[48;2;242;220;32m!fg_black!"
+	set "format_highlight=[48;2;242;220;32m!fg_black!"
 ) else if "!ui_color!"=="1" (
 	:Dark_Mode
 	set "format_section_title=!fg_bright_green!"
