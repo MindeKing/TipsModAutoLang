@@ -226,8 +226,7 @@ This makes it such that, even if settings are provided by the defaults or config
 
 * `advanced_mode` (0-2)\
 (1) Enables configuration of:
-  * File extensions for the tip(s) and lang files.\
-    (Works flawlessly, but you're going to need to change the *tip file template* and *lang file template* to work with whatever file extension you want to use.)
+  * File extensions for the tip(s) and lang files. (Works flawlessly, but you're going to need to change the *tip file template* and *lang file template* to work with whatever file extension you want to use.)
 
   (2) Enables configuration of:
   * "tips" and "lang" folder names. (Might be buggy.)
